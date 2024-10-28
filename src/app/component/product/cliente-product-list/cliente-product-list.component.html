@@ -1,0 +1,15 @@
+<div class="product-grid">
+  <div class="product-card" *ngFor="let product of products" (click)="viewProductDetails(product.id_product)">
+    <img [src]="product.imageUrl" alt="{{product.name}}" class="product-image">
+    <div class="product-info">
+      <h3>{{product.name}}</h3>
+      <p>{{product.description_product}}</p>
+      <p>{{product.price_product | currency}}</p>
+      <div>
+        <label for="quantity-{{product.id_product}}">Quantity:</label>
+        <input type="number" id="quantity-{{product.id_product}}" [(ngModel)]="quantities[product.id_product]" (ngModelChange)="updateQuantity(product.id_product, $event)" (click)="$event.stopPropagation()" min="1" class="quantity-input"/>
+      </div>
+      <button mat-raised-button color="primary" (click)="addToOrder($event, product)">Add to Order</button>
+    </div>
+  </div>
+</div>

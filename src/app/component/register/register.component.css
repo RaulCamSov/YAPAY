@@ -1,0 +1,16 @@
+.register-card {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .register-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+  

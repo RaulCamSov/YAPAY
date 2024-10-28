@@ -1,0 +1,12 @@
+<div class="product-details" *ngIf="product">
+    <img [src]="product.imageUrl" alt="{{product.name}}" class="product-image">
+    <div class="product-info">
+      <h2>{{product.name}}</h2>
+      <p>{{product.description_product}}</p>
+      <p>{{product.price_product | currency}}</p>
+      <p>Marca: {{product.productBrand}}</p>
+      <p>Tamaño: {{product.size}}</p>
+      <p>Cantidad disponible: {{product.quantity_product}}</p>
+    </div>
+  </div>
+  

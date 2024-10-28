@@ -1,0 +1,54 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Id Column -->
+      <ng-container matColumnDef="id_customer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Cliente </th>
+        <td mat-cell *matCellDef="let element"> {{element.id_customer}} </td>
+      </ng-container>
+
+        <!-- Name Column -->
+      <ng-container matColumnDef="name_customer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.name_customer}} </td>
+      </ng-container>
+
+        <!-- email Column -->
+      <ng-container matColumnDef="email_customer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Correo </th>
+        <td mat-cell *matCellDef="let element"> {{element.email_customer}} </td>
+      </ng-container>
+
+        <!-- birthdate_customer Column -->
+      <ng-container matColumnDef="birthdate_customer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de Nacimiento </th>
+        <td mat-cell *matCellDef="let element"> {{element.birthdate_customer | date}} </td>
+      </ng-container>
+
+        <!-- phone_customer Column -->
+      <ng-container matColumnDef="phone_customer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Teléfono </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone_customer}} </td>
+      </ng-container>
+
+        <!-- address_customer Column -->
+      <ng-container matColumnDef="address_customer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dirección </th>
+        <td mat-cell *matCellDef="let element"> {{element.address_customer}} </td>
+      </ng-container>
+
+        <!-- actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="warn"
+              [routerLink]="['/customer/edicion',element.id_customer]"><span class="material-icons">update</span></button>
+          </td>
+        </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  </div>
+  

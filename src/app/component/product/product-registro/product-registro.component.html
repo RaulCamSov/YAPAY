@@ -1,0 +1,41 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre del producto</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Descripcion del producto</mat-label>
+      <input matInput formControlName="description_product">
+    </mat-form-field>
+    <br>
+    
+    <mat-form-field class="example-full-width">
+        <mat-label>Marca del Producto</mat-label>
+        <input matInput formControlName="productBrand">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Talla del Producto</mat-label>
+        <input matInput formControlName="size">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Precio del producto</mat-label>
+        <input matInput type="number" formControlName="price_product">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Cantidad del producto</mat-label>
+        <input matInput type="number" formControlName="quantity_product">
+    </mat-form-field>
+    <br>
+     <!-- Botón estilizado para selección de archivo -->
+  <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
+  <button mat-raised-button color="primary" (click)="fileInput.click()">Seleccionar archivo</button>
+  <br>
+  <br>
+
+    <button mat-raised-button color="primary" type="submit">Registrar Producto</button>
+  </form>
+  

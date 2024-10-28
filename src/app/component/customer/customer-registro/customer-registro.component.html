@@ -1,0 +1,31 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre del Cliente</mat-label>
+      <input matInput formControlName="name_customer">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Correo Electrónico</mat-label>
+      <input matInput formControlName="email_customer">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Fecha de Nacimiento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthdate_customer">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="phone_customer">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Dirección</mat-label>
+      <input matInput formControlName="address_customer">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Actualizar' : 'Registrar' }} Cliente</button>
+  </form>
+  

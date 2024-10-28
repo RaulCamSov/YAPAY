@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <span class="logo">Yapay</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/login">Login</button>
+  <button mat-button routerLink="/register">Registrar</button>
+  <button mat-raised-button (click)="close()">Logout</button>
+
+  <!-- Para CUSTOMER -->
+  <ng-container *ngIf="role === 'CUSTOMER'">
+    <button mat-button routerLink="/product/cliente-listado">Inicio</button>
+    <button mat-button routerLink="/order/list">Mis Compras</button>
+  </ng-container>
+
+  <!-- Para EMPLOYER -->
+  <ng-container *ngIf="role === 'EMPLOYER'">
+    <button mat-button routerLink="/product/listado">Productos</button>
+    <button mat-button routerLink="/product/nuevo">Registrar producto</button>
+  </ng-container>
+
+  <!-- Para ADMIN -->
+  <ng-container *ngIf="role === 'ADMIN'">
+    <button mat-button routerLink="/customer/list">Listado de clientes</button>
+    <button mat-button routerLink="/customer/nuevo">Registro de clientes</button>
+    <button mat-button routerLink="/microemployer/new">Registro de Empresarios</button>
+    <button mat-button routerLink="/microemployer/list">Empresarios</button>
+  </ng-container>
+</mat-toolbar>

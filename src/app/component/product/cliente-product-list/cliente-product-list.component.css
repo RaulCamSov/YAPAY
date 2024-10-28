@@ -1,0 +1,35 @@
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 300px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-info {
+  margin-top: 12px;
+}
+
+.quantity-input {
+  width: 60px;
+  margin-right: 8px;
+}
+
+.snackbar-success {
+  background-color: #4caf50;
+  color: white;
+}

@@ -1,0 +1,69 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!-- Id Column -->
+      <ng-container matColumnDef="id_product">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID producto</th>
+        <td mat-cell *matCellDef="let element"> {{element.id_product}} </td>
+      </ng-container>
+  
+      <!-- Image Column -->
+      <ng-container matColumnDef="imageUrl">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
+        <td mat-cell *matCellDef="let element">
+          <img [src]="element.imageUrl" alt="Product Image" style="width: 100px; height: auto;">
+        </td>
+      </ng-container>
+          
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre del producto </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+  
+      <!-- description_product Column -->
+      <ng-container matColumnDef="description_product">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion del producto </th>
+        <td mat-cell *matCellDef="let element"> {{element.description_product}} </td>
+      </ng-container>
+  
+      <!-- price_product Column -->
+      <ng-container matColumnDef="price_product">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio del Producto </th>
+        <td mat-cell *matCellDef="let element"> {{element.price_product}} </td>
+      </ng-container>
+  
+      <!-- productBrand Column -->
+      <ng-container matColumnDef="productBrand">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Marca del producto </th>
+        <td mat-cell *matCellDef="let element"> {{element.productBrand}} </td>
+      </ng-container>
+  
+      <!-- size Column -->
+      <ng-container matColumnDef="size">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tamaño del producto </th>
+        <td mat-cell *matCellDef="let element"> {{element.size}} </td>
+      </ng-container>
+  
+      <!-- quantity_product Column -->
+      <ng-container matColumnDef="quantity_product">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Cantidad </th>
+        <td mat-cell *matCellDef="let element"> {{element.quantity_product}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="accion01">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="warn"
+            [routerLink]="['/product/edicion',element.id_product]"><span class="material-icons">update</span></button>
+        </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons aria-label="Select page of campaigns">
+    </mat-paginator>
+  </div>
+  

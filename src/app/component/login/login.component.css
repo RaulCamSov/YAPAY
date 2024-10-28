@@ -1,0 +1,21 @@
+.login-card {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .login-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 1rem;
+  }
+  

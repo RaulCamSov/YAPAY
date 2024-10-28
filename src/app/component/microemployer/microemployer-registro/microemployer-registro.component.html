@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="first_name">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="phone_number">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Correo</mat-label>
+      <input matInput formControlName="email_micro_employer">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre de la Microempresa</mat-label>
+      <input matInput formControlName="name_microEnterprise">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Dirección de la Microempresa</mat-label>
+      <input matInput formControlName="address_microEnterprise">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit">{{ edicion ? 'Actualizar' : 'Registrar' }} Microemployer</button>
+  </form>
+  

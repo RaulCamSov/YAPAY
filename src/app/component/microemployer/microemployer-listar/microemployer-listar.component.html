@@ -1,0 +1,41 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="id_micro_employer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id_micro_employer}} </td>
+      </ng-container>
+      <ng-container matColumnDef="first_name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="phone_number">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Teléfono </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone_number}} </td>
+      </ng-container>
+      <ng-container matColumnDef="email_micro_employer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Correo </th>
+        <td mat-cell *matCellDef="let element"> {{element.email_micro_employer}} </td>
+      </ng-container>
+      <ng-container matColumnDef="name_microEnterprise">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre de la Microempresa </th>
+        <td mat-cell *matCellDef="let element"> {{element.name_microEnterprise}} </td>
+      </ng-container>
+      <ng-container matColumnDef="address_microEnterprise">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dirección </th>
+        <td mat-cell *matCellDef="let element"> {{element.address_microEnterprise}} </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button (click)="editMicroEmployer(element.id_micro_employer)">Editar</button>
+          <button mat-button (click)="deleteMicroEmployer(element.id_micro_employer)">Eliminar</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  </div>
+  

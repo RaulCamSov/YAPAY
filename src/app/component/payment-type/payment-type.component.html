@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Register Payment Type</h2>
+  <form [formGroup]="paymentTypeForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Card Payment</mat-label>
+      <input matInput type="number" id="cardpayment" formControlName="cardpayment" />
+      <mat-error *ngIf="paymentTypeForm.get('cardpayment')?.hasError('required')">Card Payment is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Date Expiration</mat-label>
+      <input matInput type="date" id="dateexpiration" formControlName="dateexpiration" />
+      <mat-error *ngIf="paymentTypeForm.get('dateexpiration')?.hasError('required')">Date Expiration is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Titular Card</mat-label>
+      <input matInput type="text" id="titularcard" formControlName="titularcard" />
+      <mat-error *ngIf="paymentTypeForm.get('titularcard')?.hasError('required')">Titular Card is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>CVV Card</mat-label>
+      <input matInput type="number" id="CVVcard" formControlName="CVVcard" />
+      <mat-error *ngIf="paymentTypeForm.get('CVVcard')?.hasError('required')">CVV Card is required</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Register Payment Type</button>
+  </form>
+</div>
